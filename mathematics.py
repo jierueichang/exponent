@@ -11,20 +11,25 @@ COMMANDS:
  - Solving Quadratics- Input "quad: a,b,c" (In an equation ax^2+bx+c)
  - Creating Linear equations from two points- Input "linear: x1,y1,x2,y2,form(optional - choose from si (slope-intercept), ps (point-slope) and st (standard))
 '''
-import wolframalpha, math, pygame
-client = wolframalpha.Client('8AQGTP-TRAW2Q9JK6')
-
+import math, pygame
+try:
+    import wolframalpha
+    client = wolframalpha.Client('key') #Put wolframalpha key here to use the Wolfram|Alpha function.
+    wolframOn = True
+except:
+    wolframOn = False
+  
 '''Initial expression handling and basic computation'''
 def compute(expression):
     try:
         expression = expression.replace('^','**')
         return [eval(expression)]
     except:
-        #try:
-        parsed = parse(expression)
-        return determine(parsed)
-        #except:
-        #   #return wolfram(expression)   
+        try:
+            parsed = parse(expression)
+            return determine(parsed)
+        except:
+            if wolframOn:    return wolfram(expression)   
 
 '''First decompose the expression'''
 def parse(expression):
