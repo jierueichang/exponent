@@ -1,16 +1,12 @@
 
 '''EXPONENT MATH FUNCTIONS - VERSION 2.1
 
-Copyright 2019 Me
-This is some sort of license
+Copyright 2019 Jieruei Chang
+Licensed under the MIT License
 
 BASIC MATH FUNCTIONS.
-
-COMMANDS:
- - Normal 4-function calculator: Input expression (Ex. 2+2)
- - Solving Quadratics- Input "quad: a,b,c" (In an equation ax^2+bx+c)
- - Creating Linear equations from two points- Input "linear: x1,y1,x2,y2,form(optional - choose from si (slope-intercept), ps (point-slope) and st (standard))
 '''
+
 import math, pygame
 try:
     import wolframalpha
